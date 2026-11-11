@@ -208,7 +208,7 @@ html, body, h1, h2, h3, p, li { hyphens: none; -webkit-hyphens: none; }
 html, body { overflow-x: clip; }
 /* яркий первый экран: фото почти в полную силу, затемнение только под текстом слева и внизу */
 .s-hero__bg { height: min(94%, 780px); }
-.s-hero__bg img { opacity: 1; filter: saturate(1.12) brightness(1.1) contrast(1.04); }
+.s-hero__bg img { opacity: .58; filter: saturate(1.05) brightness(1.1) contrast(1); }
 .s-hero__bg::after { background:
   linear-gradient(90deg, color-mix(in srgb, var(--c-canvas) 84%, transparent) 0%, color-mix(in srgb, var(--c-canvas) 62%, transparent) 30%, color-mix(in srgb, var(--c-canvas) 12%, transparent) 56%, transparent 72%),
   linear-gradient(180deg, transparent 0%, transparent 62%, var(--c-canvas) 100%); }
