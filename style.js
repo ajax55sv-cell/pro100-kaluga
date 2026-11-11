@@ -35,11 +35,10 @@
   const digits = (s) => String(s).replace(/\D/g, "");
   document.addEventListener("click", async (e) => {
     const a = e.target.closest("[data-s-msg]"); if (!a) return;
-    e.preventDefault();
-    const kind = a.dataset.sMsg;
+    const kind = a.dataset.sMsg; if (kind !== "whatsapp") e.preventDefault();
     if (kind === "whatsapp") {
       const n = body.dataset.wa; const url = (isSlot(n) ? "https://wa.me/" : "https://wa.me/" + digits(n)) + "?text=" + encodeURIComponent(message);
-      window.open(url, "_blank", "noopener"); return;
+      a.href = url; a.target = "_blank"; a.rel = "noopener"; return;
     }
     // Telegram и MAX не принимают готовый текст по ссылке: копируем его и открываем чат
     try { await navigator.clipboard.writeText(message); } catch (_) {}
